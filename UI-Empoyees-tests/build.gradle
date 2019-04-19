@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+  
+    implementation 'org.testng:testng:6.14.3'
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    implementation 'org.openqa.selenium:selenium-rc:1.0-20081010.060147'
+    
+    
+  
+}
