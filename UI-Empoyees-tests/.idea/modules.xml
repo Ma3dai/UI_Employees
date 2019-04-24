@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/employees-tests/GitHub.UI_Employees.UI-Empoyees-tests.employees-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/employees-tests/GitHub.UI_Employees.UI-Empoyees-tests.employees-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GitHub.UI_Employees.UI-Empoyees-tests.main.iml" filepath="$PROJECT_DIR$/.idea/modules/GitHub.UI_Employees.UI-Empoyees-tests.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GitHub.UI_Employees.UI-Empoyees-tests.test.iml" filepath="$PROJECT_DIR$/.idea/modules/GitHub.UI_Employees.UI-Empoyees-tests.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/UI-Empoyees-tests.iml" filepath="$PROJECT_DIR$/UI-Empoyees-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/employees-tests/UI-Empoyees-tests.employees-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/employees-tests/UI-Empoyees-tests.employees-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/UI-Empoyees-tests.main.iml" filepath="$PROJECT_DIR$/.idea/modules/UI-Empoyees-tests.main.iml" />
