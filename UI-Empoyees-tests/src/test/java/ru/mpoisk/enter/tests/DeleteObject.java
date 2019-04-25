@@ -6,9 +6,9 @@ public class DeleteObject extends TestBase {
 
   @Test
   public void testDeleteObject() throws Exception {
-    app.goToObjectPage();
-    app.selectFirstObject();
-    app.deleteFirstObject();
-    app.submitDeletingObject();
+    app.getNavigationHelper().goToObjectPage();
+    app.getObjectHelper().selectFirstObject();
+    app.getObjectHelper().deleteFirstObject();
+    app.getObjectHelper().submitDeletingObject();
   }
 }
