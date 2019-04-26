@@ -6,11 +6,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.awt.*;
 import java.awt.event.InputEvent;
 
-public class NavigationHelper {
-    private ChromeDriver driver;
+public class NavigationHelper extends HelperBase {
 
     public NavigationHelper(ChromeDriver driver) {
-        this.driver=driver;
+
+        super(driver);
     }
 
     public static void robotClick(int x, int y) throws AWTException {
@@ -21,7 +21,7 @@ public class NavigationHelper {
     }
 
     public void goToObjectPage() throws InterruptedException {
-      driver.findElement(By.id("node_Employees_defaulte_Objects_Index_GET_Objects_")).click();
+      click(By.id("node_Employees_defaulte_Objects_Index_GET_Objects_"));
       Thread.sleep(2000);
     }
 

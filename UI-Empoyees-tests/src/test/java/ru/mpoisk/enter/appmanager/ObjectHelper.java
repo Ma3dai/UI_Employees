@@ -6,48 +6,42 @@ import ru.mpoisk.enter.model.ObjectData;
 
 import java.awt.*;
 
-public class ObjectHelper {
-
-    private  ChromeDriver driver;
+public class ObjectHelper extends HelperBase{
 
     public ObjectHelper(ChromeDriver driver) {
-        this.driver=driver;
+        super(driver);
 
     }
 
     public void submitObjectCreation() {
-      driver.findElement(By.name("Submit")).click();
+      click(By.name("Submit"));
     }
 
     public void fillObjectForm(ObjectData objectData) throws InterruptedException, AWTException {
-      driver.findElement(By.id("Info_Name")).click();
-      driver.findElement(By.id("Info_Name")).clear();
-      driver.findElement(By.id("Info_Name")).sendKeys(objectData.getName());
-      driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Адрес'])[2]/following::i[1]")).click();
-      NavigationHelper.wt(2);
+        type(By.id("Info_Name"), objectData.getName());
+        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Адрес'])[2]/following::i[1]"));
+        NavigationHelper.wt(1);
       NavigationHelper.robotClick(900, 520);
       Thread.sleep(1000);
-      driver.findElement(By.id("Info_Comment")).click();
-      driver.findElement(By.id("Info_Comment")).clear();
-      driver.findElement(By.id("Info_Comment")).sendKeys(objectData.getComment());
+        type(By.id("Info_Comment"), objectData.getComment());
 
     }
 
     public void createObjectButtonClick() throws InterruptedException {
-      driver.findElement(By.xpath("//*[@id=\"panel\"]/section/header/ul/li[7]/button")).click();
-      Thread.sleep(1000);
+        click(By.xpath("//*[@id=\"panel\"]/section/header/ul/li[7]/button"));
+        Thread.sleep(1000);
     }
 
     public void deleteFirstObject() {
-      driver.findElement(By.xpath("//*[@id=\"listcontainer\"]/div[2]/div/div[1]/div/table/tbody/tr/td[8]/ul/li[2]/button")).click();
+        click(By.xpath("//*[@id=\"listcontainer\"]/div[2]/div/div[1]/div/table/tbody/tr/td[8]/ul/li[2]/button"));
     }
 
     public void selectFirstObject() {
-      driver.findElement(By.xpath("//*[@id=\"listcontainer\"]/div[2]/div/div[1]/div/table/tbody/tr/td[1]/input")).click();
+        click(By.xpath("//*[@id=\"listcontainer\"]/div[2]/div/div[1]/div/table/tbody/tr/td[1]/input"));
     }
 
     public void submitDeletingObject() {
-        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Нет'])[1]/following::div[1]")).click();
+        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Нет'])[1]/following::div[1]"));
     }
 
 
