@@ -1,6 +1,7 @@
 package ru.mpoisk.enter.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.awt.*;
@@ -8,16 +9,9 @@ import java.awt.event.InputEvent;
 
 public class NavigationHelper extends HelperBase {
 
-    public NavigationHelper(ChromeDriver driver) {
+    public NavigationHelper(WebDriver driver) {
 
         super(driver);
-    }
-
-    public static void robotClick(int x, int y) throws AWTException {
-      Robot bot = new Robot();
-      bot.mouseMove(x, y);
-      bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-      bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
 
     public void goToObjectPage() throws InterruptedException {
@@ -25,8 +19,5 @@ public class NavigationHelper extends HelperBase {
       Thread.sleep(2000);
     }
 
-    public static void wt(long seconds) throws InterruptedException {
-        long waitingTime = seconds*1000;
-        Thread.sleep(waitingTime);
-    }
+
 }

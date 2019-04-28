@@ -1,14 +1,16 @@
 package ru.mpoisk.enter.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 import ru.mpoisk.enter.model.ObjectData;
+import ru.mpoisk.enter.model.ObjectGroupData;
 
 import java.awt.*;
 
 public class ObjectHelper extends HelperBase{
 
-    public ObjectHelper(ChromeDriver driver) {
+    public ObjectHelper(WebDriver driver) {
         super(driver);
 
     }
@@ -20,16 +22,42 @@ public class ObjectHelper extends HelperBase{
     public void fillObjectForm(ObjectData objectData) throws InterruptedException, AWTException {
         type(By.id("Info_Name"), objectData.getName());
         click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Адрес'])[2]/following::i[1]"));
-        NavigationHelper.wt(1);
-      NavigationHelper.robotClick(900, 520);
-      Thread.sleep(1000);
+        wt(1);
+        robotClick(900, 520);
+        wt(1);
         type(By.id("Info_Comment"), objectData.getComment());
+
+        // Селект из выпадающего списка
+        new Select(driver.findElement(By.id("Info_GroupID"))).selectByVisibleText("PiggyFerm");
+
+    }
+
+    public void fillObjectGroupForm(ObjectGroupData objectGroupData) throws InterruptedException, AWTException {
+        type(By.id("Name"), objectGroupData.getName());
+
+
+        // Селект родительской группы
+        // new Select(driver.findElement(By.id("GroupID"))).selectByVisibleText("PiggyFerm");
 
     }
 
     public void createObjectButtonClick() throws InterruptedException {
         click(By.xpath("//*[@id=\"panel\"]/section/header/ul/li[7]/button"));
         Thread.sleep(1000);
+    }
+
+    public void createObjectGroupButtonClick() throws InterruptedException {
+        click(By.xpath("//*[@id=\"panel\"]/aside/div/footer/a"));
+        Thread.sleep(1000);
+    }
+
+
+    public void clickGroupsButton(){
+        click(By.xpath("//*[@id=\"panel\"]/section/header/ul/li[3]/div"));
+    }
+
+    public void saveObjectGroup() {
+        click(By.name("Submit"));
     }
 
     public void deleteFirstObject() {

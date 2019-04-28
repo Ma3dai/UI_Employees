@@ -1,7 +1,6 @@
 package ru.mpoisk.enter.tests;
 
-
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 import ru.mpoisk.enter.model.ObjectData;
 
 
