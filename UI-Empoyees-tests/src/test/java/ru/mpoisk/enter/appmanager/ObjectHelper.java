@@ -1,6 +1,7 @@
 package ru.mpoisk.enter.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import ru.mpoisk.enter.model.ObjectData;
@@ -27,8 +28,8 @@ public class ObjectHelper extends HelperBase{
         wt(1);
         type(By.id("Info_Comment"), objectData.getComment());
 
-        // Селект из выпадающего списка
-        new Select(driver.findElement(By.id("Info_GroupID"))).selectByVisibleText("PiggyFerm");
+        // Селект из выпадающего списка по названию группы (возможно стоит переделать по айдишнику)
+       new Select(driver.findElement(By.id("Info_GroupID"))).selectByVisibleText(objectData.getGroup());
 
     }
 
@@ -73,4 +74,15 @@ public class ObjectHelper extends HelperBase{
     }
 
 
+    public void createObject(ObjectData objectData) throws InterruptedException, AWTException {
+       createObjectButtonClick();
+       fillObjectForm(objectData);
+       submitObjectCreation();
+    }
+
+    public boolean isThereAnObject() throws NoSuchElementException {
+        if (isElementPresent(By.xpath("//*[@id=\"listcontainer\"]/div[2]/div/div[1]/div/table/tbody/tr/td[1]/input")))
+        return true;
+        return true;
+    }
 }

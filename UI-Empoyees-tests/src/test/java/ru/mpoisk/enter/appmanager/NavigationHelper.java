@@ -16,8 +16,11 @@ public class NavigationHelper extends HelperBase {
 
     public void goToObjectPage() throws InterruptedException {
       click(By.id("node_Employees_defaulte_Objects_Index_GET_Objects_"));
-      Thread.sleep(2000);
+      Thread.sleep(1500);
     }
 
+    public void f5() {
+      driver.navigate().refresh();
+    }
 
 }

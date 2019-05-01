@@ -1,12 +1,14 @@
 package ru.mpoisk.enter.model;
 
 public class ObjectData {
-    private final String name;
-    private final String comment;
+    private String name;
+    private String comment;
+    private String group;
 
-    public ObjectData(String name, String comment) {
+    public ObjectData(String name, String comment, String group) {
         this.name = name;
         this.comment = comment;
+         this.group = group;
     }
 
     public String getName() {
@@ -16,4 +18,8 @@ public class ObjectData {
     public String getComment() {
         return comment;
     }
+
+   public String getGroup() {
+      return group;
+   }
 }

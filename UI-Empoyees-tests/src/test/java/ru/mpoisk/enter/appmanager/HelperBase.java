@@ -20,7 +20,7 @@ public class HelperBase {
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
 
-    protected void click(By locator) {
+    public void click(By locator) {
         driver.findElement(locator).click();
     }
 
@@ -40,9 +40,11 @@ public class HelperBase {
         Thread.sleep(waitingTime);
     }
 
-    public boolean isElementPresent(By by) {
+
+    // Метод проверяет есть ли такой элемент
+    public boolean isElementPresent(By locator) {
         try {
-            driver.findElement(by);
+            driver.findElement(locator);
             return true;
         } catch (NoSuchElementException e) {
             return false;

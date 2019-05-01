@@ -52,8 +52,8 @@ public class ApplicationManager {
           driver = new EdgeDriver();
         }
 
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+       driver.manage().window().maximize();
+      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://enter.mpoisk.ru/login/e");
         objectHelper = new ObjectHelper(driver);
         navigationHelper = new NavigationHelper(driver);

@@ -10,8 +10,9 @@ public class CreateObject extends TestBase {
   @Test
   public void testCreateObject() throws Exception {
     app.getNavigationHelper().goToObjectPage();
-    app.getObjectHelper().createObjectButtonClick();
-    app.getObjectHelper().fillObjectForm(new ObjectData("Тестовый объект " + Math.random(), "Йа комментег"));
-    app.getObjectHelper().submitObjectCreation();
+    app.getObjectHelper().createObject(new ObjectData("Тестовый объект " + Math.random(), "йа комментег", "True Group"));
+   //app.getObjectHelper().createObjectButtonClick();
+   // app.getObjectHelper().fillObjectForm(new ObjectData("Тестовый объект " + Math.random(), "йа комментег", "True Group"));
+   // app.getObjectHelper().submitObjectCreation();
   }
 }
