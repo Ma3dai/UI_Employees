@@ -22,7 +22,7 @@ public class ObjectHelper extends HelperBase{
 
     public void fillObjectForm(ObjectData objectData) throws InterruptedException, AWTException {
         type(By.id("Info_Name"), objectData.getName());
-        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Адрес'])[2]/following::i[1]"));
+        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Адрес'])[2]/following::i[1]"));ч
         wt(1);
         robotClick(900, 520);
         wt(1);
@@ -69,6 +69,11 @@ public class ObjectHelper extends HelperBase{
         click(By.xpath("//*[@id=\"listcontainer\"]/div[2]/div/div[1]/div/table/tbody/tr/td[1]/input"));
     }
 
+    public void selectObject(int index) {
+      driver.findElements(By.className("x-checkbox")).get(index).click();
+
+    }
+
     public void submitDeletingObject() {
         click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Нет'])[1]/following::div[1]"));
     }
@@ -85,4 +90,8 @@ public class ObjectHelper extends HelperBase{
         return true;
         return true;
     }
+
+  public int getObjectCount() {
+    return   driver.findElements(By.className("x-checkbox")).size();
+  }
 }

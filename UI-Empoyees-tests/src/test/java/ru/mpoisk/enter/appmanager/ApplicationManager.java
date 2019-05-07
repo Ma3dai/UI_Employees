@@ -53,7 +53,7 @@ public class ApplicationManager {
         }
 
        driver.manage().window().maximize();
-      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+      driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         driver.get("https://enter.mpoisk.ru/login/e");
         objectHelper = new ObjectHelper(driver);
         navigationHelper = new NavigationHelper(driver);
